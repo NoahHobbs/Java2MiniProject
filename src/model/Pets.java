@@ -28,7 +28,27 @@ public class Pets {
 	@Column (name="birthday")
 	private LocalDate petBirthday;
 	
-	
+	public Pets() {
+		super();
+	}
+	public Pets(String petName, Owner owner, LocalDate petBirthday) {
+		super();
+		this.petName = petName;
+		this.owner = owner;
+		this.petBirthday = petBirthday;
+	}
+	public Pets(String petName, LocalDate petBirthday) {
+		super();
+		this.petName = petName;
+		this.petBirthday = petBirthday;
+	}
+	public Pets(int id, String petName, Owner owner, LocalDate petBirthday) {
+		super();
+		this.id = id;
+		this.petName = petName;
+		this.owner = owner;
+		this.petBirthday = petBirthday;
+	}
 	public int getId() {
 		return id;
 	}
