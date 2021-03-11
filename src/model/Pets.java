@@ -1,11 +1,31 @@
 package model;
 import java.time.LocalDate;
 
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table (name="pet")
 public class Pets {
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="petId")
 	private int id;
+	@Column(name="name")
 	private String petName;
+	
 	//when owner class is made create object of it here so a pet has an owner
+	@ManyToOne (cascade=CascadeType.PERSIST)
+	@JoinColumn(name="id")
 	private Owner owner;
+	@Column (name="birthday")
 	private LocalDate petBirthday;
 	
 	
