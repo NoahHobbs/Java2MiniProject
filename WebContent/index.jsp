@@ -5,6 +5,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Index page</title>
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
 	<h1> Welcome to our Java 2 mini project</h1>

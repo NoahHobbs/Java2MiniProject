@@ -1,0 +1,75 @@
+.banner{
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 100%;
+	height: auto;
+	margin-top: 70px;
+	margin-bottom: 25px;
+}
+
+.navbar-dark .navbar-nav .nav-link{
+	color: gold;
+	text-shadow: 3px 3px 7px black;
+}
+
+.navbar-dark .navbar-brand{
+	color: gold;
+	text-shadow: 3px 3px 7px black;
+}
+
+.navbar-dark{
+	background-color: #272A31;
+}
+
+body {
+	background-color: #343a40;
+	font-family: Georgia, serif;
+	color:white;
+	text-shadow: 3px 3px 7px black;
+}
+
+a:link, a:visited {
+	color: gold;
+}
+a:hover {
+	color: lightgrey;
+}
+
+footer {
+  position: absolute;
+  width: 100%;
+  white-space: nowrap;
+  text-align: center;
+  color: gold;
+  text-shadow: 3px 3px 7px black;
+  background-color: #272A31;
+}
+
+p strong {
+	font-size: 150%;
+}
+
+h1,h2, legend, h5{
+	color: gold;
+	text-shadow: 3px 3px 7px black;
+}
+
+.carousel-caption{
+	color: gold;
+	text-shadow: 3px 3px 7px black;
+}
+
+.banner-g{
+	display: block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 30px;
+}
+
+#border {
+	border: 1px solid #272A31;
+	padding-top: 5px;
+}
