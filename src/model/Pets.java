@@ -29,26 +29,31 @@ public class Pets {
 	private LocalDate petBirthday;
 	
 	public Pets() {
+		//Default empty constructor
 		super();
 	}
 	public Pets(String petName, Owner owner, LocalDate petBirthday) {
+		// 3 arg constructor
 		super();
 		this.petName = petName;
 		this.owner = owner;
 		this.petBirthday = petBirthday;
 	}
 	public Pets(String petName, LocalDate petBirthday) {
+		// 2 arg constructor
 		super();
 		this.petName = petName;
 		this.petBirthday = petBirthday;
 	}
 	public Pets(int id, String petName, Owner owner, LocalDate petBirthday) {
+		// 4 arg constructor
 		super();
 		this.id = id;
 		this.petName = petName;
 		this.owner = owner;
 		this.petBirthday = petBirthday;
 	}
+	//Getters and Setters
 	public int getId() {
 		return id;
 	}
@@ -69,13 +74,14 @@ public class Pets {
 	}
 	
 	public Owner getOwner() {
+		
 		return owner;
 	}
 	
 	public void setOwner(Owner owner) {
 		this.owner = owner;
 	}
-	
+	//Our toString 
 	@Override
 	public String toString() {
 		return "Pets [id=" + id + ", petName=" + petName + ", petBirthday=" + petBirthday + "]";
