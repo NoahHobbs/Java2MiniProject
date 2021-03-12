@@ -7,6 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Pets;
+
+import java.time.LocalDate;
+
 /**
  * Servlet implementation class addPetServlet
  */
@@ -27,7 +31,21 @@ public class addPetServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		String name = request.getParameter("name");
+		String month = request.getParameter("month");
+		String day = request.getParameter("day");
+		String year = request.getParameter("year");
+		
+		LocalDate ld;
+		try {
+			ld = LocalDate.of(Integer.parseInt(year),Integer.parseInt(month), Integer.parseInt(day));
+		} catch (NumberFormatException ex) {
+			ld = LocalDate.now();
+		}
+		Pets pet = new Pets(name, ld);
+		System.out.println(pet.toString());
+		getServletContext().getRequestDispatcher("/viewAllPetsServlet").forward(request, response);
+		
 	}
 
 	/**

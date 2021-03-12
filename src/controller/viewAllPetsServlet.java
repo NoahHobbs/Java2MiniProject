@@ -27,7 +27,13 @@ public class viewAllPetsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		PetsHelper ph = new PetsHelper();
+		request.setAttribute("allPets", ph.showAllPets());
+		String path = "/car-list.jsp";
+		if(ph.showAllPets().isEmpty()) {
+			path="/index.html";
+		}
+		getServletContext().getRequestDispatcher(path).forward(request, response);
 	}
 
 	/**
