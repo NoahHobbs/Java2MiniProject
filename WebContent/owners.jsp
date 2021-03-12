@@ -16,7 +16,7 @@
 		<td><input type="radio" name="id" value="${currentowners.id}"></td>
 		<td><h2>${currentowners.Name}</h2></td></tr>
 		<tr><td></td><td colspan="3">
-			${requestScope.pets(currentowners.id)}
+			<%@ %>
 			</td>
 		</tr>
 	</c:forEach>

@@ -1,11 +1,15 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import model.Owner;
 
 /**
  * Servlet implementation class OwnersServlet
@@ -27,7 +31,14 @@ public class OwnersServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		OwnerHelper oh = new OwnerHelper();
+		List<Owner> allOwners = oh.getAllOwners();
+		request.setAttribute("allOwners", allOwners);
+		request.setAttribute("oh", oh);
+		if(allOwners.isEmpty()) {
+			request.setAttribute("allOwners", " ");
+		}
+		getServletContext().getRequestDispatcher("/owners.jsp").forward(request, response);
 	}
 
 	/**
