@@ -9,7 +9,6 @@ import javax.persistence.Table;
 
 @Entity
 @Table (name="owner")
-
 public class Owner {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)

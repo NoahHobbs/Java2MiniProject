@@ -14,7 +14,7 @@
 	Birthday: <input type = "text" name = "birthday">
 	<input type="submit" value="Add Item">	
 	</form> <br />
-	<a href = "/viewAllPetsServlet"> View all Pets</a>
-	<a href = "/ownersServlet"> View all Owners</a>
+	<a href = "viewAllPetsServlet"> View all Pets</a>
+	<a href = "ownersServlet"> View all Owners</a>
 </body>
 </html>

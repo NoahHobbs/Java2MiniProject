@@ -14,9 +14,11 @@
 	<c:forEach items="${requestScope.allOwners}" var="currentowners">
 	<tr>
 		<td><input type="radio" name="id" value="${currentowners.id}"></td>
-		<td><h2>${currentowners.Name}</h2></td></tr>
+		<td><h2>${currentowners.ownerName}</h2></td></tr>
 		<tr><td></td><td colspan="3">
-			<%@ %>
+			<c:forEach items="${requestScope.oh.getPetsByOwnerId(currentowners.id)}" var="currentpets">
+			<p>${currentpets.ownerName}</p>
+			</c:forEach>
 			</td>
 		</tr>
 	</c:forEach>

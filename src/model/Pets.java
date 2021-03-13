@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -22,8 +23,10 @@ public class Pets {
 	private String petName;
 	
 	//when owner class is made create object of it here so a pet has an owner
-	@ManyToOne (cascade=CascadeType.PERSIST)
-	@JoinColumn(name="id")
+	@ManyToOne (cascade=CascadeType.MERGE)
+	@JoinTable(name="owner",
+	joinColumns={ @JoinColumn(name="petId", referencedColumnName="petId") },
+	inverseJoinColumns={ @JoinColumn(name="ownerId", referencedColumnName="id", unique=true) })
 	private Owner owner;
 	@Column (name="birthday")
 	private LocalDate petBirthday;

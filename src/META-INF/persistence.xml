@@ -7,7 +7,7 @@
 		<class>controller.LocalDateAttributeConverter</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="cis175partnerproject.cshhsrgkvy47.us-east-1.rds.amazonaws.com"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://cis175partnerproject.cshhsrgkvy47.us-east-1.rds.amazonaws.com/groupProject"/>
 			<property name="javax.persistence.jdbc.user" value="admin"/>
 			<property name="javax.persistence.jdbc.password" value="WeLoveGroupProjects"/>
 		</properties>
