@@ -16,7 +16,7 @@ public class OwnerHelper {
 	static EntityManagerFactory emfactory = Persistence.createEntityManagerFactory("Java2MiniProject");
 	public List<Pets> getPetsByOwnerId(int id) {
 		EntityManager em = emfactory.createEntityManager();
-		TypedQuery<Pets> typedQuery = em.createQuery("SELECT p FROM Pets p WHERE p.ownerId == :id" , Pets.class);
+		TypedQuery<Pets> typedQuery = em.createQuery("SELECT p FROM Pets p WHERE p.owner.id == :id" , Pets.class);
 		typedQuery.setParameter("id", id);
 		List<Pets> allPets = typedQuery.getResultList();
 		return allPets;
