@@ -18,4 +18,13 @@ public class PetsHelper {
 		List<Pets> allPets = em.createQuery("SELECT p FROM Pets p").getResultList();
 		return allPets;
 	}
+	
+	public void insertPet(Pets pet) {
+		// This method inserts cars into my database
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		em.persist(pet);
+		em.getTransaction().commit();
+		em.close();
+	}
 }
