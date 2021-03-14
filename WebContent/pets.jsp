@@ -5,9 +5,22 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>View Pets</title>
 </head>
 <body>
-
+<form method = "post" action = "navigationServlet">
+	<table>
+		<c:forEach items="${requestScope.allPets}" var="currentpet">
+		<tr>
+			<td><input type="radio" name="id" value="${currentpet.id}"></td>
+			<td>${currentpet.name}</td>
+			<td>${currentpet.birthday}</td>
+		</tr>
+		</c:forEach>
+	</table>
+	<input type = "submit" value ="edit" name="doThisToCar">
+	<input type = "submit" value ="delete" name="doThisToCar">
+	<input type = "submit" value ="add" name="doThisToCar">
+	</form>
 </body>
 </html>

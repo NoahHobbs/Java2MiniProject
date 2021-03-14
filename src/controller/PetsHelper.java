@@ -15,7 +15,7 @@ public class PetsHelper {
 		// this method gets all items inside my database puts them in a list and then returns them
 		EntityManager em = emfactory.createEntityManager();
 		@SuppressWarnings("unchecked")
-		List<Pets> allPets = em.createQuery("SELECT p FROM pet p").getResultList();
+		List<Pets> allPets = em.createQuery("SELECT p FROM Pets p").getResultList();
 		return allPets;
 	}
 }
