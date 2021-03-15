@@ -29,7 +29,7 @@ public class viewAllPetsServlet extends HttpServlet {
 		// TODO Auto-generated method stub
 		PetsHelper ph = new PetsHelper();
 		request.setAttribute("allPets", ph.showAllPets());
-		String path = "/car-list.jsp";
+		String path = "/pets.jsp";
 		if(ph.showAllPets().isEmpty()) {
 			path="/index.html";
 		}

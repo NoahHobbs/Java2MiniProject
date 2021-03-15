@@ -43,6 +43,8 @@ public class addPetServlet extends HttpServlet {
 			ld = LocalDate.now();
 		}
 		Pets pet = new Pets(name, ld);
+		PetsHelper ph = new PetsHelper();
+		ph.insertPet(pet);
 		System.out.println(pet.toString());
 		getServletContext().getRequestDispatcher("/viewAllPetsServlet").forward(request, response);
 		
