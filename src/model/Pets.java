@@ -25,7 +25,7 @@ public class Pets {
 	//when owner class is made create object of it here so a pet has an owner
 	@ManyToOne (cascade=CascadeType.MERGE)
 	@JoinTable(name="owner",
-	joinColumns={ @JoinColumn(name="petId", referencedColumnName="petId") },
+	joinColumns={ @JoinColumn(name="petId", referencedColumnName="id") },
 	inverseJoinColumns={ @JoinColumn(name="ownerId", referencedColumnName="id", unique=true) })
 	private Owner owner;
 	@Column (name="birthday")
