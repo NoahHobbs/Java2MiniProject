@@ -14,7 +14,7 @@
 		<tr>
 			<td><input type="radio" name="id" value="${currentpet.id}"></td>
 			<td>${currentpet.petName}</td>
-			<td>${currentpet.birthday}</td>
+			<td>${currentpet.petBirthday}</td>
 		</tr>
 		</c:forEach>
 	</table>
