@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.Owner;
 import model.Pets;
 
 import java.time.LocalDate;
@@ -42,7 +43,9 @@ public class addPetServlet extends HttpServlet {
 		} catch (NumberFormatException ex) {
 			ld = LocalDate.now();
 		}
-		Pets pet = new Pets(name, ld);
+		// make dropdown to select owner
+		Owner own = new Owner("test");
+		Pets pet = new Pets(name, own, ld);
 		PetsHelper ph = new PetsHelper();
 		ph.insertPet(pet);
 		System.out.println(pet.toString());
