@@ -23,10 +23,8 @@ public class Pets {
 	private String petName;
 	
 	//when owner class is made create object of it here so a pet has an owner
-	@ManyToOne (cascade=CascadeType.MERGE)
-	@JoinTable(name="owner",
-	joinColumns={ @JoinColumn(name="petId", referencedColumnName="id") },
-	inverseJoinColumns={ @JoinColumn(name="ownerId", referencedColumnName="id", unique=true) })
+	@ManyToOne (cascade=CascadeType.PERSIST)
+	@JoinColumn(name="ownerId")
 	private Owner owner;
 	@Column (name="birthday")
 	private LocalDate petBirthday;
