@@ -19,7 +19,7 @@
 		</tr>
 		</c:forEach>
 	</table>
-	<input type = "submit" value ="deleteP" name="doThisToItem">
+	<input type = "submit" value ="delete" name="doThisToItem">
 	</form>
 		<a href = "index.html">Home</a>
 		<a href = "addServlet">Add Pets</a>
