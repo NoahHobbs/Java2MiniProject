@@ -30,9 +30,7 @@ public class viewAllPetsServlet extends HttpServlet {
 		PetsHelper ph = new PetsHelper();
 		request.setAttribute("allPets", ph.showAllPets());
 		String path = "/pets.jsp";
-		if(ph.showAllPets().isEmpty()) {
-			path="/index.html";
-		}
+		
 		getServletContext().getRequestDispatcher(path).forward(request, response);
 	}
 

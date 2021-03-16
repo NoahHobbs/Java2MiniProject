@@ -23,7 +23,7 @@ public class Pets {
 	private String petName;
 	
 	//when owner class is made create object of it here so a pet has an owner
-	@ManyToOne (cascade=CascadeType.PERSIST)
+	@ManyToOne (cascade=CascadeType.MERGE)
 	@JoinColumn(name="ownerId")
 	private Owner owner;
 	@Column (name="birthday")

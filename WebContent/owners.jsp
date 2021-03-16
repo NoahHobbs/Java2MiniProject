@@ -6,10 +6,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Owners</title>
+<link href="style.css" rel="stylesheet">
+
 </head>
 <body>
 	<h1>These are all of the owners and their pets!</h1>
-	<form method = "post" action = "ownernavigationServlet">
+	<form method = "post" action = "navServlet">
 	<table>
 	<c:forEach items="${requestScope.allOwners}" var="currentowners">
 	<tr>
@@ -17,16 +19,19 @@
 		<td><h2>${currentowners.ownerName}</h2></td></tr>
 		<tr><td></td><td colspan="3">
 			<c:forEach items="${requestScope.oh.getPetsByOwnerId(currentowners.id)}" var="currentpets">
-			<p>${currentpets.ownerName}</p>
+			<p>${currentpets.petName}</p>
 			</c:forEach>
 			</td>
 		</tr>
 	</c:forEach>
+	
 	</table>
-	<input type = "submit" value = "delete" name="doThisList">
-	<input type = "submit" value = "add" name = "doThisList">
-	</form>
-	<a href="addStudentsForListServlet">Create a new Owner</a>
-	<a href="index.html">Add a new pet</a>
+	<input type = "submit" value = "deleteO" name="doThisToItem">
+	<p>Name: <input type ="text" name = "nameO">
+	<input type = "submit" value = "addO" name = "doThisToItem">
+	</p></form>
+	<a href="index.html">Home</a>
+	<a href = "addServlet">Add new Pet</a>
+	<a href = "viewAllPetsServlet"> View all Pets</a>
 </body>
 </html>

@@ -1,6 +1,8 @@
 package controller;
 
 import java.io.IOException;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,21 +10,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Owner;
-import model.Pets;
-
-import java.time.LocalDate;
 
 /**
- * Servlet implementation class addPetServlet
+ * Servlet implementation class addServlet
  */
-@WebServlet("/addPetServlet")
-public class addPetServlet extends HttpServlet {
+@WebServlet("/addServlet")
+public class addServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public addPetServlet() {
+    public addServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,23 +31,14 @@ public class addPetServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String name = request.getParameter("name");
-		String month = request.getParameter("month");
-		String day = request.getParameter("day");
-		String year = request.getParameter("year");
-		
-		LocalDate ld;
-		try {
-			ld = LocalDate.of(Integer.parseInt(year),Integer.parseInt(month), Integer.parseInt(day));
-		} catch (NumberFormatException ex) {
-			ld = LocalDate.now();
-		}
 		OwnerHelper oh = new OwnerHelper();
-		Pets pet = new Pets(name,oh.searchForOwnerById((Integer.parseInt(request.getParameter("owner")))), ld);
-		PetsHelper ph = new PetsHelper();
-		ph.insertPet(pet);
-		getServletContext().getRequestDispatcher("/viewAllPetsServlet").forward(request, response);
-		
+		List<Owner> allOwners = oh.getAllOwners();
+		request.setAttribute("allOwners", allOwners);
+		request.setAttribute("oh", oh);
+		if(allOwners.isEmpty()) {
+			request.setAttribute("allOwners", " ");
+		}
+		getServletContext().getRequestDispatcher("/addPets.jsp").forward(request, response);
 	}
 
 	/**

@@ -6,9 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>View Pets</title>
+<link href="style.css" rel="stylesheet">
 </head>
 <body>
-<form method = "post" action = "navigationServlet">
+<form method = "post" action = "navServlet">
 	<table>
 		<c:forEach items="${requestScope.allPets}" var="currentpet">
 		<tr>
@@ -18,9 +19,10 @@
 		</tr>
 		</c:forEach>
 	</table>
-	<input type = "submit" value ="edit" name="doThisToCar">
-	<input type = "submit" value ="delete" name="doThisToCar">
-	<input type = "submit" value ="add" name="doThisToCar">
+	<input type = "submit" value ="deleteP" name="doThisToItem">
 	</form>
+		<a href = "index.html">Home</a>
+		<a href = "addServlet">Add Pets</a>
+		<a href = "ownersServlet"> View all Owners</a>
 </body>
 </html>
