@@ -61,4 +61,12 @@ public class OwnerHelper {
 		em.close();
 		return found;
 	}
+	public void editOwner(Owner owner, String name) {
+		EntityManager em = emfactory.createEntityManager();
+		em.getTransaction().begin();
+		owner.setOwnerName(name);
+		em.merge(owner);
+		em.getTransaction().commit();
+		em.close();
+	}
 }

@@ -67,6 +67,15 @@ public class navServlet extends HttpServlet {
 			}catch (Exception e) {
 				System.out.println("Invalid Owner name");
 			}
+		}
+		else if (act.equals("change name")) {
+			try {
+				Owner ownerToEdit = oh.searchForOwnerById(Integer.parseInt(request.getParameter("id")));
+				oh.editOwner(ownerToEdit, request.getParameter("nameO"));
+				path = "/ownersServlet";
+			}catch (Exception e) {
+				System.out.println("Invalid Owner name");
+			}
 		}else path = "/index.html";
 		
 		getServletContext().getRequestDispatcher(path).forward(request, response);

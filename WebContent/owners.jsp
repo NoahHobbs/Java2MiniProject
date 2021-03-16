@@ -29,6 +29,7 @@
 	<input type = "submit" value = "deleteO" name="doThisToItem">
 	<p>Name: <input type ="text" name = "nameO">
 	<input type = "submit" value = "addO" name = "doThisToItem">
+	<input type = "submit" value = "change name" name = "doThisToItem">
 	</p></form>
 	<a href="index.html">Home</a>
 	<a href = "addServlet">Add new Pet</a>
